@@ -39,7 +39,7 @@ public class AuthController {
         return userRepository.findByEmail(request.getEmail())
                 .<ResponseEntity<?>>map(user -> {
                     if(passwordEncoder.matches(request.getPassword(), user.getPassword())) {
-                        String token = jwtUtil.generateToken(user.getId(), user.getEmail(), user.getRole().name());
+                        String token = jwtUtil.generateToken(user.getId(), user.getEmail(), user.getRole().name(), user.getName());
                         return ResponseEntity.ok(new JwtResponse(token));
                     } else {
                         return ResponseEntity.status(401).body("Invalid password");

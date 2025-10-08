@@ -15,11 +15,12 @@ public class JwtUtil {
     private final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
     private final long expiration = 1000 * 60 * 60 * 24; // 24 hours
 
-    public String generateToken(Long id, String email, String role) {
+    public String generateToken(Long id, String email, String role, String name) {
         return Jwts.builder()
                 .setSubject(email)
                 .claim("role", role)
                 .claim("id", id)
+                .claim("name", name) // Optional: include name if needed
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + expiration))
                 .signWith(key)
@@ -49,6 +50,15 @@ public Long extractId(String token) {
             .parseClaimsJws(token)
             .getBody();
     return claims.get("id", Long.class);
+}
+
+public String extractName(String token) {
+    Claims claims = Jwts.parserBuilder()
+            .setSigningKey(key)
+            .build()
+            .parseClaimsJws(token)
+            .getBody();
+    return claims.get("name", String.class);
 }
 
 }
