@@ -1,5 +1,7 @@
 package com.onepagebuilder.backend.controller;
 
+import com.onepagebuilder.backend.entity.User;
+import com.onepagebuilder.backend.repository.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,6 +21,7 @@ import software.amazon.awssdk.services.s3.model.NoSuchKeyException;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -29,6 +32,9 @@ public class SubdomainProxyController {
 
     @Autowired
     private S3Client s3Client;
+
+    @Autowired
+    private UserRepository userRepository;
 
     // MIME type mapping for common file extensions
     private static final Map<String, String> MIME_TYPES = new HashMap<>();
@@ -50,15 +56,14 @@ public class SubdomainProxyController {
     }
 
     /**
-     * Catch-all endpoint to serve published sites from subdomains
+     * Catch-all endpoint to serve published sites
      * 
      * How it works:
-     * 1. User visits: https://pasindulakmalbandara.onepagebuilder.live/
-     * 2. DNS resolves to your Spring Boot server
-     * 3. Spring Boot extracts subdomain: "pasindulakmalbandara"
-     * 4. Spring Boot fetches from S3: pasindulakmalbandara/index.html
+     * 1. User visits the site
+     * 2. Spring Boot fetches username directly from database (first user's email)
+     * 3. Extracts username from email (e.g., "pasindu@example.com" → "pasindu")
+     * 4. Spring Boot fetches from S3: {username}/index.html
      * 5. Spring Boot serves it back to the user
-     * 6. User sees their site at pasindulakmalbandara.onepagebuilder.live
      * 
      * Also handles static assets like CSS, JS, images, etc.
      */
@@ -68,15 +73,17 @@ public class SubdomainProxyController {
             HttpServletRequest request
     ) {
         try {
-            // Extract subdomain from host
-            String username = extractSubdomain(host);
-
-            // Skip if not a subdomain request (e.g., localhost, API endpoints)
-            if (username == null || username.isEmpty() || 
-                host == null || host.startsWith("localhost") || 
-                host.startsWith("127.0.0.1") ||
-                request.getRequestURI().startsWith("/api/")) {
+            // Skip API endpoints
+            if (request.getRequestURI().startsWith("/api/")) {
                 return null; // Let other controllers handle it
+            }
+
+            // Fetch username directly from database (gets first user's email and extracts username)
+            String username = getUsernameFromDatabase();
+            if (username == null) {
+                System.err.println("No user found in database");
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("Site not found. No user registered.");
             }
 
             // Get the requested path (default to index.html for root)
@@ -88,12 +95,11 @@ public class SubdomainProxyController {
             // Build S3 key: username/path
             String s3Key = username + requestPath;
 
-            System.out.println("===== SUBDOMAIN PROXY REQUEST =====");
-            System.out.println("Host: " + host);
-            System.out.println("Subdomain (Username): " + username);
+            System.out.println("===== SITE PROXY REQUEST (DB LOOKUP) =====");
+            System.out.println("Username from DB: " + username);
             System.out.println("Request Path: " + requestPath);
             System.out.println("S3 Key: " + s3Key);
-            System.out.println("===================================");
+            System.out.println("==========================================");
 
             // Fetch from S3
             GetObjectRequest getObjectRequest = GetObjectRequest.builder()
@@ -132,29 +138,31 @@ public class SubdomainProxyController {
     }
 
     /**
-     * Extract subdomain from host header
-     * Example: "pasindulakmalbandara.onepagebuilder.live" → "pasindulakmalbandara"
-     * Example: "test.onepagebuilder.live" → "test"
+     * Fetch username directly from database
+     * Gets the first user's email and extracts username from it
      */
-    private String extractSubdomain(String host) {
-        if (host == null || host.isEmpty()) {
+    private String getUsernameFromDatabase() {
+        List<User> users = userRepository.findAll();
+        
+        if (users.isEmpty()) {
             return null;
         }
+        
+        // Get first user's email and extract username
+        User user = users.get(0);
+        return extractUsername(user.getEmail());
+    }
 
-        // Remove port if present (e.g., localhost:8080 → localhost)
-        host = host.split(":")[0];
-
-        // Split by dots
-        String[] parts = host.split("\\.");
-
-        // Check if it's a valid subdomain pattern
-        // We expect: subdomain.onepagebuilder.live (3 parts)
-        if (parts.length >= 3) {
-            // Return the first part (subdomain)
-            return parts[0];
-        }
-
-        return null;
+    /**
+     * Extract username from email (same logic as ProjectService)
+     * Example: "pasindu.bandara@example.com" → "pasindu-bandara"
+     */
+    private String extractUsername(String email) {
+        return email.split("@")[0]
+            .toLowerCase()
+            .replaceAll("[^a-z0-9]", "-")
+            .replaceAll("-+", "-")
+            .trim();
     }
 
     /**
