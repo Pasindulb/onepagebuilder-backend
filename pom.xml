@@ -96,6 +96,23 @@
 			<artifactId>hypersistence-utils-hibernate-63</artifactId>
 			<version>3.7.3</version>
 		</dependency>
+		<!-- AWS SDK for DigitalOcean Spaces (S3 compatible) -->
+		<dependency>
+			<groupId>software.amazon.awssdk</groupId>
+			<artifactId>s3</artifactId>
+			<version>2.20.26</version>
+		</dependency>
+		<!-- Thymeleaf for HTML template generation -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<!-- OGNL for Thymeleaf expression evaluation -->
+		<dependency>
+			<groupId>ognl</groupId>
+			<artifactId>ognl</artifactId>
+			<version>3.3.4</version>
+		</dependency>
 
 	</dependencies>
 
