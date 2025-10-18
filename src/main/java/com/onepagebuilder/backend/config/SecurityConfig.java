@@ -59,6 +59,9 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/projects/**").permitAll() // Temporarily permit for testing
+                // Allow all non-API requests (for subdomain proxy serving public sites)
+                .requestMatchers(request -> !request.getRequestURI().startsWith("/api/")).permitAll()
                 .anyRequest().authenticated()
             )
             .sessionManagement(session -> session

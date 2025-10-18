@@ -4,12 +4,14 @@ package com.onepagebuilder.backend.controller;
 import com.onepagebuilder.backend.entity.Project;
 import com.onepagebuilder.backend.services.ProjectService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/projects")
 @RequiredArgsConstructor
@@ -35,6 +37,7 @@ public class ProjectController {
             Project project = projectService.createProject(userId, name, description);
             return ResponseEntity.ok(project);
         } catch (Exception e) {
+            log.error("Error creating project for user: {}", userId, e);
             return ResponseEntity.internalServerError().build();
         }
     }
@@ -46,6 +49,7 @@ public class ProjectController {
             List<Project> projects = projectService.getUserProjects(userId);
             return ResponseEntity.ok(projects);
         } catch (Exception e) {
+            log.error("Error fetching projects for user: {}", userId, e);
             return ResponseEntity.internalServerError().build();
         }
     }
@@ -60,6 +64,7 @@ public class ProjectController {
             Project project = projectService.getProject(projectId, userId);
             return ResponseEntity.ok(project);
         } catch (Exception e) {
+            log.error("Error fetching project {} for user: {}", projectId, userId, e);
             return ResponseEntity.notFound().build();
         }
     }
@@ -68,29 +73,39 @@ public class ProjectController {
     @PostMapping("/{projectId}/draft")
     public ResponseEntity<Void> saveDraft(
         @PathVariable Long projectId,
-        @RequestHeader("User-Id") Long userId, // Or get from JWT token
+        @RequestHeader("User-Id") Long userId,
         @RequestBody Object config
     ) {
         try {
             projectService.saveDraft(projectId, userId, config);
             return ResponseEntity.ok().build();
         } catch (Exception e) {
+            log.error("Error saving draft for project {} user: {}", projectId, userId, e);
             return ResponseEntity.internalServerError().build();
         }
     }
     
     // Publish site
     @PostMapping("/{projectId}/publish")
-    public ResponseEntity<Void> publishSite(
+    public ResponseEntity<Map<String, String>> publishSite(
         @PathVariable Long projectId,
         @RequestHeader("User-Id") Long userId,
         @RequestBody Object config
     ) {
         try {
-            projectService.publishSite(projectId, userId, config);
-            return ResponseEntity.ok().build();
+            log.info("Publishing site - Project: {}, User: {}", projectId, userId);
+            String liveUrl = projectService.publishSite(projectId, userId, config);
+            log.info("Site published successfully - Project: {}, URL: {}", projectId, liveUrl);
+            return ResponseEntity.ok(Map.of(
+                "message", "Site published successfully",
+                "liveUrl", liveUrl
+            ));
         } catch (Exception e) {
-            return ResponseEntity.internalServerError().build();
+            log.error("Error publishing site for project {} user: {}", projectId, userId, e);
+            return ResponseEntity.status(500).body(Map.of(
+                "error", "Failed to publish site",
+                "message", e.getMessage()
+            ));
         }
     }
     
@@ -104,6 +119,7 @@ public class ProjectController {
             String draft = projectService.getDraft(projectId, userId);
             return ResponseEntity.ok(draft);
         } catch (Exception e) {
+            log.error("Error fetching draft for project {} user: {}", projectId, userId, e);
             return ResponseEntity.notFound().build();
         }
     }
@@ -115,6 +131,7 @@ public class ProjectController {
             String published = projectService.getPublished(projectId);
             return ResponseEntity.ok(published);
         } catch (Exception e) {
+            log.error("Error fetching published site for project: {}", projectId, e);
             return ResponseEntity.notFound().build();
         }
     }

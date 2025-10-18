@@ -1,0 +1,324 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.example:backend >-------------------------
+[INFO] Building backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.5.6:run (default-cli) > test-compile @ backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ backend ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ backend ---
+[INFO] skip non existing resourceDirectory /Users/pasi/Desktop/onepagebuilder/backend/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ backend ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.5.6:run (default-cli) < test-compile @ backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.5.6:run (default-cli) @ backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.6)
+
+2025-10-17T00:19:33.372+05:30  INFO 95789 --- [backend] [  restartedMain] com.onepagebuilder.BackendApplication    : Starting BackendApplication using Java 21.0.4 with PID 95789 (/Users/pasi/Desktop/onepagebuilder/backend/target/classes started by pasi in /Users/pasi/Desktop/onepagebuilder/backend)
+2025-10-17T00:19:33.374+05:30  INFO 95789 --- [backend] [  restartedMain] com.onepagebuilder.BackendApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-17T00:19:33.395+05:30  INFO 95789 --- [backend] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-17T00:19:33.396+05:30  INFO 95789 --- [backend] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-17T00:19:33.662+05:30  INFO 95789 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-17T00:19:33.685+05:30  INFO 95789 --- [backend] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+2025-10-17T00:19:33.910+05:30  INFO 95789 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-17T00:19:33.917+05:30  INFO 95789 --- [backend] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-17T00:19:33.918+05:30  INFO 95789 --- [backend] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-17T00:19:33.932+05:30  INFO 95789 --- [backend] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-17T00:19:33.933+05:30  INFO 95789 --- [backend] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 536 ms
+2025-10-17T00:19:34.016+05:30  INFO 95789 --- [backend] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-17T00:19:34.043+05:30  INFO 95789 --- [backend] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-17T00:19:34.057+05:30  INFO 95789 --- [backend] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-17T00:19:34.101+05:30  INFO 95789 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-17T00:19:34.763+05:30  INFO 95789 --- [backend] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@43ef0838
+2025-10-17T00:19:34.764+05:30  INFO 95789 --- [backend] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-17T00:19:34.846+05:30  WARN 95789 --- [backend] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-17T00:19:34.998+05:30  INFO 95789 --- [backend] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-17T00:19:35.093+05:30  INFO 95789 --- [backend] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-17T00:19:35.415+05:30  INFO 95789 --- [backend] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-17T00:19:35.706+05:30  INFO 95789 --- [backend] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-17T00:19:36.136+05:30  WARN 95789 --- [backend] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-17T00:19:36.198+05:30  WARN 95789 --- [backend] [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 97194827-7a7d-4071-b6b0-3d39c7cb978a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-10-17T00:19:36.201+05:30  INFO 95789 --- [backend] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-10-17T00:19:36.274+05:30  WARN 95789 --- [backend] [  restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-10-17T00:19:36.322+05:30  INFO 95789 --- [backend] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-10-17T00:19:36.336+05:30  INFO 95789 --- [backend] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-17T00:19:36.341+05:30  INFO 95789 --- [backend] [  restartedMain] com.onepagebuilder.BackendApplication    : Started BackendApplication in 3.121 seconds (process running for 3.329)
+2025-10-17T00:19:43.912+05:30  INFO 95789 --- [backend] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-17T00:19:43.912+05:30  INFO 95789 --- [backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-17T00:19:43.913+05:30  INFO 95789 --- [backend] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-17T00:19:43.956+05:30  INFO 95789 --- [backend] [nio-8080-exec-1] c.o.b.controller.ProjectController       : Publishing site - Project: 1, User: 1
+===== DEPLOYMENT SUCCESS =====
+Project: First Project
+Username: pasindulakmalbandara
+Deployed to: pasindulakmalbandara/index.html
+Live URL: https://pasindulakmalbandara.onepagebuilder.live
+==============================
+2025-10-17T00:19:44.767+05:30  INFO 95789 --- [backend] [nio-8080-exec-1] c.o.b.controller.ProjectController       : Site published successfully - Project: 1, URL: https://pasindulakmalbandara.onepagebuilder.live
+2025-10-17T00:22:55.548+05:30  INFO 95789 --- [backend] [nio-8080-exec-6] c.o.b.controller.ProjectController       : Publishing site - Project: 1, User: 1
+===== DEPLOYMENT SUCCESS =====
+Project: First Project
+Username: pasindulakmalbandara
+Deployed to: pasindulakmalbandara/index.html
+Live URL: https://pasindulakmalbandara.onepagebuilder.live
+==============================
+2025-10-17T00:22:56.090+05:30  INFO 95789 --- [backend] [nio-8080-exec-6] c.o.b.controller.ProjectController       : Site published successfully - Project: 1, URL: https://pasindulakmalbandara.onepagebuilder.live
+2025-10-17T00:29:12.704+05:30  INFO 95789 --- [backend] [nio-8080-exec-7] c.o.b.controller.ProjectController       : Publishing site - Project: 1, User: 1
+===== DEPLOYMENT SUCCESS =====
+Project: First Project
+Username: pasindulakmalbandara
+Deployed to: pasindulakmalbandara/index.html
+Live URL: https://pasindulakmalbandara.onepagebuilder.live
+==============================
+2025-10-17T00:29:13.276+05:30  INFO 95789 --- [backend] [nio-8080-exec-7] c.o.b.controller.ProjectController       : Site published successfully - Project: 1, URL: https://pasindulakmalbandara.onepagebuilder.live
+2025-10-17T00:34:39.149+05:30  INFO 95789 --- [backend] [nio-8080-exec-6] c.o.b.controller.ProjectController       : Publishing site - Project: 1, User: 1
+===== DEPLOYMENT SUCCESS =====
+Project: First Project
+Username: pasindulakmalbandara
+Deployed to: pasindulakmalbandara/index.html
+Live URL: https://pasindulakmalbandara.onepagebuilder.live
+==============================
+2025-10-17T00:34:39.637+05:30  INFO 95789 --- [backend] [nio-8080-exec-6] c.o.b.controller.ProjectController       : Site published successfully - Project: 1, URL: https://pasindulakmalbandara.onepagebuilder.live
+2025-10-17T00:36:18.823+05:30  INFO 95789 --- [backend] [io-8080-exec-10] c.o.b.controller.ProjectController       : Publishing site - Project: 1, User: 1
+===== DEPLOYMENT SUCCESS =====
+Project: First Project
+Username: pasindulakmalbandara
+Deployed to: pasindulakmalbandara/index.html
+Live URL: https://pasindulakmalbandara.onepagebuilder.live
+==============================
+2025-10-17T00:36:19.491+05:30  INFO 95789 --- [backend] [io-8080-exec-10] c.o.b.controller.ProjectController       : Site published successfully - Project: 1, URL: https://pasindulakmalbandara.onepagebuilder.live
+2025-10-17T00:37:50.950+05:30  INFO 95789 --- [backend] [nio-8080-exec-2] c.o.b.controller.ProjectController       : Publishing site - Project: 1, User: 1
+===== DEPLOYMENT SUCCESS =====
+Project: First Project
+Username: pasindulakmalbandara
+Deployed to: pasindulakmalbandara/index.html
+Live URL: https://pasindulakmalbandara.onepagebuilder.live
+==============================
+2025-10-17T00:37:51.524+05:30  INFO 95789 --- [backend] [nio-8080-exec-2] c.o.b.controller.ProjectController       : Site published successfully - Project: 1, URL: https://pasindulakmalbandara.onepagebuilder.live
+2025-10-17T00:39:04.427+05:30  INFO 95789 --- [backend] [nio-8080-exec-6] c.o.b.controller.ProjectController       : Publishing site - Project: 1, User: 1
+===== DEPLOYMENT SUCCESS =====
+Project: First Project
+Username: pasindulakmalbandara
+Deployed to: pasindulakmalbandara/index.html
+Live URL: https://pasindulakmalbandara.onepagebuilder.live
+==============================
+2025-10-17T00:39:04.927+05:30  INFO 95789 --- [backend] [nio-8080-exec-6] c.o.b.controller.ProjectController       : Site published successfully - Project: 1, URL: https://pasindulakmalbandara.onepagebuilder.live
+2025-10-17T01:13:03.221+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2f87cc5a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T01:13:05.810+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s556ms).
+2025-10-17T01:29:06.334+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s500ms).
+2025-10-17T01:29:08.907+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@20feb307 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T01:44:36.212+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s878ms).
+2025-10-17T01:44:40.100+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2ea02603 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T02:00:06.102+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s890ms).
+2025-10-17T02:16:02.023+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5d4ec96e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T02:16:06.635+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s509ms).
+2025-10-17T02:31:32.730+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@62b06c7d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T02:31:37.179+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s544ms).
+2025-10-17T02:47:37.918+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s718ms).
+2025-10-17T02:47:46.872+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2c9a3b47 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T02:58:54.706+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m16s787ms).
+2025-10-17T02:59:19.637+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7ecbf9f0 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T03:14:55.392+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s672ms).
+2025-10-17T03:15:17.404+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@20da1610 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T03:30:55.838+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s428ms).
+2025-10-17T03:30:58.413+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@53bb7a2a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T03:46:26.345+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s507ms).
+2025-10-17T04:00:02.777+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m36s433ms).
+2025-10-17T04:00:16.921+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@445684b4 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T04:15:32.613+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s835ms).
+2025-10-17T04:15:49.131+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4ee78c87 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T04:31:02.495+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s882ms).
+2025-10-17T04:47:03.107+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s605ms).
+2025-10-17T04:47:17.252+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@698ace77 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T05:00:55.729+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m52s622ms).
+2025-10-17T05:01:03.371+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@73b42ff6 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T05:16:55.661+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s916ms).
+2025-10-17T05:32:25.517+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@19f85fba (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T05:32:25.594+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s933ms).
+2025-10-17T05:32:43.202+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@62ca7ceb (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T05:48:26.072+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s472ms).
+2025-10-17T06:02:13.493+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@69d9c50f (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T06:02:17.788+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m21s695ms).
+2025-10-17T06:02:35.066+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@71cb1087 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T06:17:48.437+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s648ms).
+2025-10-17T06:33:48.414+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s967ms).
+2025-10-17T06:34:06.060+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5e5988de (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T06:49:18.873+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s459ms).
+2025-10-17T06:49:23.916+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@f1aaca6 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T07:03:09.969+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m21s97ms).
+2025-10-17T07:18:41.686+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s717ms).
+2025-10-17T07:18:51.941+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1ac5bd94 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T07:34:12.192+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s505ms).
+2025-10-17T07:34:13.961+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@223b1f (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T07:50:12.884+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s678ms).
+2025-10-17T07:50:35.749+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@79e314e5 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T08:03:55.123+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m42s240ms).
+2025-10-17T08:04:08.943+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@c70c6a8 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T08:10:14.040+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m48s905ms).
+2025-10-17T08:25:45.788+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s748ms).
+2025-10-17T08:25:46.898+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4ac22b01 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T08:26:07.796+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@232c96b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T08:41:15.665+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m29s877ms).
+2025-10-17T08:56:47.214+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s549ms).
+2025-10-17T08:58:27.160+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4830d6a3 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T08:58:46.066+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m28s841ms).
+2025-10-17T08:58:52.676+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3c9ade40 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T09:04:40.934+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m54s867ms).
+2025-10-17T10:05:40.616+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7b2c693a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T10:05:40.620+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h29s674ms).
+2025-10-17T10:06:00.710+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@53e15547 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T10:21:30.798+05:30  WARN 95789 --- [backend] [onnection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (f427ed54-dc1e-4ef5-9477-f03ebf56a96c)
+
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.Driver.makeConnection(Driver.java:448) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.7.jar:42.7.7]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-6.3.3.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: java.net.UnknownHostException: onepagebuilder-do-user-17134874-0.l.db.ondigitalocean.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289) ~[postgresql-42.7.7.jar:42.7.7]
+	... 14 common frames omitted
+
+2025-10-17T10:56:38.476+05:30  WARN 95789 --- [backend] [onnection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (c82d99f5-e5e6-43e8-8042-5872b2fc698a)
+
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.Driver.makeConnection(Driver.java:448) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.7.jar:42.7.7]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-6.3.3.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: java.net.UnknownHostException: onepagebuilder-do-user-17134874-0.l.db.ondigitalocean.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289) ~[postgresql-42.7.7.jar:42.7.7]
+	... 14 common frames omitted
+
+2025-10-17T11:06:40.943+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h30s315ms).
+2025-10-17T11:23:21.467+05:30  WARN 95789 --- [backend] [onnection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (72b3b88e-d5f6-4861-b4c9-c118ff7a1772)
+
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.Driver.makeConnection(Driver.java:448) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.7.jar:42.7.7]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-6.3.3.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: java.net.UnknownHostException: onepagebuilder-do-user-17134874-0.l.db.ondigitalocean.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289) ~[postgresql-42.7.7.jar:42.7.7]
+	... 14 common frames omitted
+
+2025-10-17T11:55:01.780+05:30  WARN 95789 --- [backend] [onnection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (2ce51ea0-c6b7-4121-a8fb-9418605d4f84)
+
+org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:385) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:277) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.Driver.makeConnection(Driver.java:448) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.7.jar:42.7.7]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-6.3.3.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: java.net.UnknownHostException: onepagebuilder-do-user-17134874-0.l.db.ondigitalocean.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:261) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:122) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146) ~[postgresql-42.7.7.jar:42.7.7]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289) ~[postgresql-42.7.7.jar:42.7.7]
+	... 14 common frames omitted
+
+2025-10-17T11:59:19.071+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52m8s116ms).
+2025-10-17T12:12:19.041+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Retrograde clock change detected (housekeeper delta=29s799ms), soft-evicting connections from pool.
+2025-10-17T12:19:09.508+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m50s471ms).
+2025-10-17T12:26:18.236+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m8s728ms).
+2025-10-17T12:42:15.533+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4803475b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T12:42:25.548+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@23d2d4f5 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T12:42:25.550+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m37s302ms).
+2025-10-17T12:50:47.766+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m22s217ms).
+2025-10-17T12:51:45.288+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@451e22c (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2025-10-17T12:51:53.455+05:30  WARN 95789 --- [backend] [l-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@708586 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.

@@ -3,7 +3,10 @@ package com.onepagebuilder.backend.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.onepagebuilder.backend.entity.Project;
+import com.onepagebuilder.backend.entity.User;
 import com.onepagebuilder.backend.repository.ProjectRepository;
+import com.onepagebuilder.backend.repository.UserRepository;
+import com.onepagebuilder.backend.service.DeploymentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +19,9 @@ import java.util.List;
 public class ProjectService {
     
     private final ProjectRepository projectRepository;
+    private final UserRepository userRepository;
     private final ObjectMapper objectMapper;
+    private final DeploymentService deploymentService;
     
     // Create new project
     @Transactional
@@ -85,9 +90,12 @@ public class ProjectService {
     
     // Publish site
     @Transactional
-    public void publishSite(Long projectId, Long userId, Object config) throws Exception {
+    public String publishSite(Long projectId, Long userId, Object config) throws Exception {
         Project project = projectRepository.findByIdAndUserId(projectId, userId)
             .orElseThrow(() -> new RuntimeException("Project not found"));
+        
+        User user = userRepository.findById(userId)
+            .orElseThrow(() -> new RuntimeException("User not found"));
         
         String configJson = objectMapper.writeValueAsString(config);
         
@@ -99,7 +107,26 @@ public class ProjectService {
         project.setDraftConfig(configJson);
         project.setDraftUpdatedAt(LocalDateTime.now());
         
+        // Deploy to DigitalOcean Spaces
+        String username = extractUsername(user.getEmail());
+        String siteUrl = deploymentService.deploySite(username, project.getName(), configJson);
+        
+        // Save the live URL
+        project.setLiveUrl(siteUrl);
         projectRepository.save(project);
+        
+        return siteUrl;
+    }
+    
+    // Extract username from email (or use name if available)
+    private String extractUsername(String email) {
+        // Extract part before @ and make it URL-safe
+        String username = email.split("@")[0]
+            .toLowerCase()
+            .replaceAll("[^a-z0-9]", "-")
+            .replaceAll("-+", "-")
+            .trim();
+        return username;
     }
     
     // Get draft
